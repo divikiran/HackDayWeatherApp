@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="0,50,0,0" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:WeatherApp;assembly=WeatherApp" x:Class="WeatherApp.Pages.HomePage">
+<!--    <ContentPage.Resources>
+        <ResourceDictionary>
+            <views:CelsiusConverter x:Key="celsiusConvert" />
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Enter City Name" x:Name="CityName" Margin="10" />
+            <Button Text="Get Weather" Clicked="Handle_Clicked" />
+            <ListView HasUnevenRows="true" x:Name="WeatherListView">
+                <!-- <ListView.ItemsSource>
+                <x:Array Type="{x:Type views:Weather}">
+                    <views:Weather Name="Melbourne" Temperature="20 C" CityImage="MelbourneCity" />
+                    <views:Weather Name="Sydney" Temperature="20 C" CityImage="SydneyCity" />
+                    <views:Weather Name="Canberra" Temperature="20 C" CityImage="CanberraCity" />
+                    <views:Weather Name="Melbourne" Temperature="20 C" CityImage="MelbourneCity" />
+                    <views:Weather Name="Sydney" Temperature="20 C" CityImage="SydneyCity" />
+                    <views:Weather Name="Canberra" Temperature="20 C" CityImage="CanberraCity" />
+                </x:Array>
+            </ListView.ItemsSource>-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <views:WeatherCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
